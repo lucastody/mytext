@@ -16,6 +16,7 @@ public class MyPdfTest extends PdfDocument {
 
 	public void create() throws Exception {
 		add(paragraph("Teste"));
+		add(paragraph("Teste 2"));
 		
 		byte[] b = close();
 		FileOutputStream f = new FileOutputStream(new File("C:/testePdf.pdf"));
