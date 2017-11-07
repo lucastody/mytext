@@ -243,6 +243,16 @@ public class PdfDocument implements IDocument {
 	}
 	
 	@Override
+	public ICell cell(IImage image) {
+		return new CellImpl(this, image);
+	}
+	
+	@Override
+	public ICell cell(IImage image, boolean fit) {
+		return new CellImpl(this, image, fit);
+	}
+	
+	@Override
 	public IPhrase phrase(String text) throws DocumentException {
 		return new PhraseImpl(this, getFont(), getValue(text));
 	}

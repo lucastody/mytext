@@ -43,6 +43,8 @@ public interface IDocument {
 	ICell cell(String pattern, Object ... values) throws DocumentException;
 	ICell cell(IChunk... chunk) throws DocumentException;
 	ICell cell(ITable table) throws DocumentException;
+	ICell cell(IImage image) throws DocumentException;
+	ICell cell(IImage image, boolean fit) throws DocumentException;
 	
 	IPhrase phrase(String text) throws DocumentException;
 	IPhrase phrase(Font font, String text) throws DocumentException;

@@ -9,6 +9,7 @@ import com.itextpdf.text.pdf.PdfPCell;
 import com.mytext.pdf.IDocument;
 import com.mytext.pdf.element.ICell;
 import com.mytext.pdf.element.IChunk;
+import com.mytext.pdf.element.IImage;
 import com.mytext.pdf.element.IPhrase;
 import com.mytext.pdf.element.ITable;
 import com.mytext.pdf.impl.PdfElement;
@@ -38,6 +39,14 @@ public class CellImpl extends PdfElement<PdfPCell> implements ICell {
 
 	public CellImpl(IDocument document, IPhrase phrase) {
 		super(document, new PdfPCell(phrase.element()));
+	}
+	
+	public CellImpl(IDocument document, IImage image) {
+		super(document, new PdfPCell(image.element()));
+	}
+	
+	public CellImpl(IDocument document, IImage image, boolean fit) {
+		super(document, new PdfPCell(image.element(), fit));
 	}
 
 	@Override
